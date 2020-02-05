@@ -4,8 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class JobTest {
     Job test_job1;
@@ -36,4 +35,16 @@ public class JobTest {
         assertFalse(test_job1.equals(test_job2));
     }
 
+    @Test
+    public void testToString() {
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String testJobString = testJob.toString();
+        assertEquals("\n" +
+                "ID: 3\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: \n", testJobString);
+    }
 }
