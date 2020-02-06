@@ -37,7 +37,7 @@ public class JobTest {
 
     @Test
     public void testToString() {
-        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
         String testJobString = testJob.toString();
         assertEquals("\n" +
                 "ID: 3\n" +
@@ -45,6 +45,6 @@ public class JobTest {
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
-                "Core Competency: \n", testJobString);
+                "Core Competency: Data Not Available\n", testJobString);
     }
 }
